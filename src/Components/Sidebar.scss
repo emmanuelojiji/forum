@@ -5,6 +5,12 @@ aside {
   min-width: 200px;
   background: grey;
   transition: 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+ 
+
 
   @media only screen and (max-width: 600px) {
     max-width: 0px;

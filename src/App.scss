@@ -1,6 +1,5 @@
 .App {
   background: #f9f9f9;
-  height: 100%;
   flex: 1;
   transition: 0.2s ease-in-out;
 
@@ -13,7 +12,7 @@
   display: flex;
   overflow-x: hidden;
   height: 100%;
-  position: relative;
+
 }
 
 /*.menu-closed {
