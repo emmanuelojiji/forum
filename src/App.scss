@@ -1,5 +1,6 @@
 .App {
   background: #f9f9f9;
+  height: fit-content;
   flex: 1;
   transition: 0.2s ease-in-out;
 
@@ -14,16 +15,4 @@
   height: 100vh;
 }
 
-/*.menu-closed {
-  @media only screen and (max-width: 600px) {
-    transform: translateX(-200px);
-    min-width: 100%;
-  }
-}
 
-.menu-open {
-  @media only screen and (max-width: 600px) {
-    transform: translateX(200px);
-    min-width: 100%;
-  }
-}*/
