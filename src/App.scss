@@ -1,5 +1,31 @@
 .App {
-  text-align: center;
-  background: #F9F9F9;
-  height: 100vh;
+  background: #f9f9f9;
+  height: 100%;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+
+  @media only screen and (max-width: 600px) {
+    min-width: 100%;
+  }
 }
+
+.App-Sidebar-wrap {
+  display: flex;
+  overflow-x: hidden;
+  height: 100%;
+  position: relative;
+}
+
+/*.menu-closed {
+  @media only screen and (max-width: 600px) {
+    transform: translateX(-200px);
+    min-width: 100%;
+  }
+}
+
+.menu-open {
+  @media only screen and (max-width: 600px) {
+    transform: translateX(200px);
+    min-width: 100%;
+  }
+}*/

@@ -1,0 +1,28 @@
+header{
+    background: white;
+    margin-bottom: 50px;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.mobile-menu{
+    @media only screen and (min-width: 600px) {
+        display: none;
+      }
+}
+
+.menu-logo-wrap{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar{
+    width: 30px;
+    height: 30px;
+    background: grey;
+    border-radius: 1em;
+}

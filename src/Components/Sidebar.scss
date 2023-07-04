@@ -1,0 +1,22 @@
+aside {
+  height: 100vh;
+  width: 100%;
+  max-width: 200px;
+  min-width: 200px;
+  background: grey;
+  transition: 0.3s ease-in-out;
+
+  @media only screen and (max-width: 600px) {
+    max-width: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-open {
+    min-width: 200px;
+  }
+
+  .menu-closed {
+    min-width: 0;
+  }
+}
