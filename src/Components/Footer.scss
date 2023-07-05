@@ -1,11 +1,13 @@
 footer {
-  height: 70px;
+  
   width: 100%;
-  border-top: solid 1px rgb(232, 232, 232);
-  background: white;
+  border-top: solid 1px #303030;
+  background: #131313;
   position: fixed;
   bottom: 0;
   left: 0;
+  padding-left: calc(env(safe-area-inset-left) + 20px);
+  padding-bottom: env(safe-area-inset-top);
 
   @media only screen and (min-width: 600px) {
     display: none;

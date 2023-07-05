@@ -1,32 +1,36 @@
-header{
-    background: white;
-    margin-bottom: 50px;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
+header {
+  background: #131313;
+  margin-bottom: 50px;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: calc(env(safe-area-inset-top) + 20px);
 }
 
+h1{
+    color: white;
+}
 
-.mobile-menu{
+.mobile-menu {
+  display: none;
+  @media only screen and (min-width: 600px) {
     display: none;
-    @media only screen and (min-width: 600px) {
-        display: none;
-      }
+  }
 }
 
-.menu-logo-wrap{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.menu-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.avatar{
-    width: 25px;
-    height: 25px;
-    background: grey;
-    border-radius: 1em;
+.avatar {
+  width: 25px;
+  height: 25px;
+  background: grey;
+  border-radius: 1em;
 }

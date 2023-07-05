@@ -1,9 +1,10 @@
 .App {
-  background: #f9f9f9;
   height: fit-content;
   flex: 1;
   transition: 0.2s ease-in-out;
   position: relative;
+  overflow: scroll;
+  background: #131313;
 
 
 
@@ -16,4 +17,9 @@
   display: flex;
   overflow-x: hidden;
   height: 100vh;
+}
+
+.content{
+  padding-top: calc(env(safe-area-inset-top) + 20px + 100px);
+  
 }

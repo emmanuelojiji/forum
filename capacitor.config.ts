@@ -1,7 +1,7 @@
 import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.forum.app",
+  appId: "com.whisperapp.app",
   appName: "forum",
   webDir: "build",
   /*server: {

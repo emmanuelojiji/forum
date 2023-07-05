@@ -7,7 +7,6 @@ const Card = () => {
         <div className="avatar"></div>
         <h5>Username</h5>
       </div>
-      <h2>Post Title</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
         feugiat ultricies efficitur. Aenean scelerisque lorem id enim finibus,
