@@ -3,9 +3,11 @@ import "./Sidebar.scss"
 const Sidebar = ({menuOpen}) => {
     return(
         <aside class={`${menuOpen ? "menu-open" : "menu-closed"}`}>
-            <p>Aside</p>
-            <p>Aside</p>
-            <p>Aside</p>
+            <div className="content">
+            <p>Link 1</p>
+            <p>Link 2</p>
+            <p>Link 3</p>
+        </div>
         </aside>
     )
 }
