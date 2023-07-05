@@ -13,7 +13,7 @@ const Header = ({menuOpen, setMenuOpen}) => {
         >
           Mobile
         </p>
-        <h1>Logolala</h1>
+        <h1>Logo</h1>
       </div>
       <div className="avatar"></div>
     </header>

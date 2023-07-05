@@ -9,7 +9,19 @@
   padding: 40px;
   border-radius: 20px;
 
-  h2{
+  h2 {
     margin-bottom: 25px;
   }
+
+  p {
+    font-size: 14px;
+    color: #818181;
+  }
+}
+
+.username-avatar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }

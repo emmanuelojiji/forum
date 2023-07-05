@@ -10,7 +10,9 @@ header{
     left: 0;
 }
 
+
 .mobile-menu{
+    display: none;
     @media only screen and (min-width: 600px) {
         display: none;
       }
@@ -23,8 +25,8 @@ header{
 }
 
 .avatar{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: grey;
     border-radius: 1em;
 }

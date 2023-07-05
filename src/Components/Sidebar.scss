@@ -8,7 +8,16 @@ aside {
   position: sticky;
   top: 0;
   left: 0;
-  background: brown;
+  background: white;
+
+  .content{
+    padding: 20px;
+  }
+
+  p{
+    margin-bottom: 20px;
+  }
+  
 
   @media only screen and (max-width: 600px) {
     max-width: 0px;
