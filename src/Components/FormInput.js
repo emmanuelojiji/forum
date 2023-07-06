@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./FormInput.scss";
 
 const FormInput = ({ placeholder, onChange }) => {
