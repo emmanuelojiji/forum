@@ -5,7 +5,6 @@ import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import { useState } from "react";
 import Footer from "./Components/Footer";
-import { StatusBar, Style } from "@capacitor/status-bar";
 import Authentication from "./Components/Authentication";
 
 function App() {
