@@ -10,7 +10,7 @@ import Authentication from "./Components/Authentication";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [userSignedIn, setUserSignedIn] = useState(true);
+  const [userSignedIn, setUserSignedIn] = useState(false);
 
   return (
     <div className="global-wrap">
