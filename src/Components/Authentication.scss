@@ -1,12 +1,23 @@
 .Authentication {
-  background: black;
+  background: #0B0B0B;
   height: 100vh;
+  width: 100%;
   color: white;
   display: flex;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
+  padding-top: calc(env(safe-area-inset-top) + 85px);
 }
 
-input {
-  display: block;
+.authentication-content{
+  max-width: 500px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.authentication-title{
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: rgb(217, 217, 217);
 }
