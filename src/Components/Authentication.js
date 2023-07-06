@@ -1,12 +1,10 @@
 import "./Authentication.scss";
 import { useEffect, useState } from "react";
 
-const Authentication = () => {
+const Authentication = ({ setUserSignedIn }) => {
   const code = "123456";
 
   const [view, setView] = useState("sign-in");
-
-  const [isSignedIn, setIsSignedIn] = useState(false);
 
   return (
     <div className="Authentication">
@@ -15,7 +13,7 @@ const Authentication = () => {
           <h1>Sign In</h1>
           <input></input>
           <input></input>
-          <button>Next</button>
+          <button onClick={() => setUserSignedIn(true)}>Next</button>
           <h2 onClick={() => setView("referral")}>or sign up</h2>
         </div>
       )}

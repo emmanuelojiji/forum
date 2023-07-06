@@ -6,6 +6,8 @@ import Sidebar from "./Components/Sidebar";
 import { useState } from "react";
 import Footer from "./Components/Footer";
 import Authentication from "./Components/Authentication";
+import { IonApp, IonRouterOutlet } from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,22 +15,24 @@ function App() {
   const [userSignedIn, setUserSignedIn] = useState(false);
 
   return (
-    <div className="global-wrap">
-      {!userSignedIn && <Authentication />}
+    <IonApp>
+      <div className="global-wrap">
+        {!userSignedIn && <Authentication setUserSignedIn={setUserSignedIn} />}
 
-      {userSignedIn && (
-        <div className="App-Sidebar-wrap">
-          <Sidebar menuOpen={menuOpen} />
-          <div className="App">
-            <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <div className="content">
-              <Feed />
+        {userSignedIn && (
+          <div className="App-Sidebar-wrap">
+            <Sidebar menuOpen={menuOpen} />
+            <div className="App">
+              <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+              <div className="content">
+                <Feed />
+              </div>
+              <Footer />
             </div>
-            <Footer />
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </IonApp>
   );
 }
 
