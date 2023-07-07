@@ -29,7 +29,7 @@ const SignUp = ({
         }}
     />
       <FormButton text="Sign up" onClick={onClick} />
-      <p class="alternative" onClick={() => setView("sign-in")}>Or sign up</p>
+      <p class="alternative" onClick={() => setView("sign-in")}>Or sign In</p>
     </div>
   );
 };

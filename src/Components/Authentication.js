@@ -9,12 +9,10 @@ import ChooseUsername from "./ChooseUsername";
 import { addDoc, setDoc, doc, Timestamp } from "firebase/firestore";
 
 const Authentication = ({ setUserSignedIn }) => {
-  const [view, setView] = useState("sign-in");
+  const [view, setView] = useState("sign-up");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const codes = ["123456", "abcde", "test-code", "c0de"];
 
   const handleSignUp = async () => {
     try {
@@ -34,7 +32,6 @@ const Authentication = ({ setUserSignedIn }) => {
         job_role: "",
         time_created: Timestamp.now(),
       });
-
     } catch (error) {
       console.log(error.code);
       console.log(error.message);
@@ -48,7 +45,7 @@ const Authentication = ({ setUserSignedIn }) => {
           <SignIn setView={setView} setUserSignedIn={setUserSignedIn} />
         )}
 
-        {view === "referral" && <Referral setView={setView} codes={codes} />}
+        {view === "referral" && <Referral setView={setView} />}
 
         {view === "sign-up" && (
           <SignUp
