@@ -7,10 +7,10 @@ const SignIn = ({setUserSignedIn, setView}) => {
     <div className="sign-in">
       <h1 className="authentication-title">Sign In</h1>
       <FormInput placeholder="Email" />
-      <FormInput placeholder="Password" />
+      <FormInput type="password" placeholder="Password" />
       <FormButton text="Sign In" onClick={() => setUserSignedIn(true)} />
 
-      <h2 onClick={() => setView("referral")}>or sign up</h2>
+      <p class="alternative" onClick={() => setView("referral")}>Or sign up</p>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import "./Referral.scss";
 import FormInput from "../Components/FormInput";
 
-const Referral = ({code, setView}) => {
+const Referral = ({ codes, setView }) => {
   return (
     <div className="referral-container">
       <h1 className="authentication-title">
@@ -11,7 +11,8 @@ const Referral = ({code, setView}) => {
       <FormInput
         placeholder="Code"
         onChange={(e) => {
-          if (e.target.value === code) {
+          const matchingCode = codes.find((code) => code === e.target.value);
+          if (matchingCode) {
             setView("sign-up");
           }
         }}

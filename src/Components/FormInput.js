@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./FormInput.scss";
 
-const FormInput = ({ placeholder, onChange }) => {
+const FormInput = ({ type, placeholder, onChange }) => {
   return (
     <input
+    type={type}
       className="form-input"
       placeholder={placeholder}
       onChange={onChange}

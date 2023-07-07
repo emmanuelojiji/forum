@@ -2,34 +2,43 @@ import "./Authentication.scss";
 import { useEffect, useState } from "react";
 import SignUp from "../Components/SignUp";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+import { db, auth } from "../firebaseConfig";
 import SignIn from "./SignIn";
 import Referral from "./Referral";
 import ChooseUsername from "./ChooseUsername";
+import { addDoc, setDoc, doc, Timestamp } from "firebase/firestore";
 
 const Authentication = ({ setUserSignedIn }) => {
-  const [view, setView] = useState("sign-up");
+  const [view, setView] = useState("sign-in");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const code = "123456";
+  const codes = ["123456", "abcde", "test-code", "c0de"];
 
-  const handleSignUp = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        setView("choose-username")
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+  const handleSignUp = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      setView("choose-username");
 
-        console.log(errorCode);
-        console.log(errorMessage);
+      const newDoc = await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        name: "",
+        username: "",
+        country: "",
+        job_role: "",
+        time_created: Timestamp.now(),
       });
+
+    } catch (error) {
+      console.log(error.code);
+      console.log(error.message);
+    }
   };
 
   return (
@@ -39,7 +48,7 @@ const Authentication = ({ setUserSignedIn }) => {
           <SignIn setView={setView} setUserSignedIn={setUserSignedIn} />
         )}
 
-        {view === "referral" && <Referral setView={setView} code={code} />}
+        {view === "referral" && <Referral setView={setView} codes={codes} />}
 
         {view === "sign-up" && (
           <SignUp
@@ -48,6 +57,7 @@ const Authentication = ({ setUserSignedIn }) => {
             email={email}
             password={password}
             setPassword={setPassword}
+            setView={setView}
           />
         )}
 

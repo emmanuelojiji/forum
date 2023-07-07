@@ -2,7 +2,14 @@ import "./Sign.scss";
 import FormInput from "../Components/FormInput";
 import FormButton from "../Components/FormButton";
 
-const SignUp = ({ email, setEmail, password, setPassword, onClick }) => {
+const SignUp = ({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  onClick,
+  setView,
+}) => {
   return (
     <div className="sign-up">
       <h1 className="authentication-title">Sign up</h1>
@@ -14,14 +21,15 @@ const SignUp = ({ email, setEmail, password, setPassword, onClick }) => {
         }}
       />
       <FormInput
+      type="password"
         placeholder="Password"
         onChange={(e) => {
           setPassword(e.target.value);
           console.log(password);
         }}
-      />
+    />
       <FormButton text="Sign up" onClick={onClick} />
-      <h2>Sign Up</h2>
+      <p class="alternative" onClick={() => setView("sign-in")}>Or sign up</p>
     </div>
   );
 };
