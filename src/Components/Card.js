@@ -5,7 +5,7 @@ const Card = () => {
     <div className="Card">
       <div className="username-avatar-wrap">
         <div className="avatar"></div>
-        <h5>Username</h5>
+        <h5>Emma</h5>
       </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
