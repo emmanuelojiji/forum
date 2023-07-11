@@ -9,20 +9,28 @@ import Authentication from "./Components/Authentication";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { auth } from "./firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [userSignedIn, setUserSignedIn] = useState(false);
+  const [userSignedIn, setUserSignedIn] = useState();
 
-  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      setUserSignedIn(true);
+      // ...
+    } else {
+    }
+  });
 
   return (
     <IonApp>
       <div className="global-wrap">
-        {!user && <Authentication setUserSignedIn={setUserSignedIn} />}
+        {!userSignedIn && <Authentication setUserSignedIn={setUserSignedIn} />}
 
-        {user && (
+        {userSignedIn && (
           <div className="App-Sidebar-wrap">
             <Sidebar menuOpen={menuOpen} />
             <div className="App">
