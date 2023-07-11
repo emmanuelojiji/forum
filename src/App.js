@@ -6,29 +6,39 @@ import Sidebar from "./Components/Sidebar";
 import { useState } from "react";
 import Footer from "./Components/Footer";
 import Authentication from "./Components/Authentication";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
+import { IonApp } from "@ionic/react";
 import { auth } from "./firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from "./Components/Profile";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+
   const [userSignedIn, setUserSignedIn] = useState();
+  const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
       setUserSignedIn(true);
+      setLoading(false);
       // ...
     } else {
+      setLoading(false);
     }
   });
 
   return (
-    <IonApp>
+    <BrowserRouter>
+      {loading && <h1 className="loading">LOADING</h1>}
       <div className="global-wrap">
-        {!userSignedIn && <Authentication setUserSignedIn={setUserSignedIn} />}
+        {!userSignedIn && !loading && (
+          <Authentication setUserSignedIn={setUserSignedIn} />
+        )}
 
         {userSignedIn && (
           <div className="App-Sidebar-wrap">
@@ -36,14 +46,25 @@ function App() {
             <div className="App">
               <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
               <div className="content">
-                <Feed />
+                <Routes>
+                  <Route
+                    path="/profile"
+                    element={
+                      <Profile
+                        userSignedIn={userSignedIn}
+                        setUserSignedIn={setUserSignedIn}
+                      />
+                    }
+                  />
+                  <Route exact path="/" element={<Feed />} />
+                </Routes>
               </div>
               <Footer />
             </div>
           </div>
         )}
       </div>
-    </IonApp>
+    </BrowserRouter>
   );
 }
 
