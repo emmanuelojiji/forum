@@ -44,7 +44,7 @@ function App() {
           <div className="App-Sidebar-wrap">
             <Sidebar menuOpen={menuOpen} />
             <div className="App">
-              <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+             
               <div className="content">
                 <Routes>
                   <Route

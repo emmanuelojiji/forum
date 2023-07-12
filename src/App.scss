@@ -20,6 +20,7 @@
 }
 
 .content{
-  padding-top: calc(env(safe-area-inset-top) + 20px + 100px);
+  //padding-top: calc(env(safe-area-inset-top) + 20px + 100px);
+    padding-top: calc(env(safe-area-inset-top));  
   
 }

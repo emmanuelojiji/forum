@@ -1,0 +1,70 @@
+.Profile {
+  padding-bottom: calc(70px + 50px);
+}
+
+.profile-header {
+  padding-left: 7%;
+  padding-right: 7%;
+  background: #171717;
+  padding-top: calc(env(safe-area-inset-top) + 30px);
+  padding-bottom: 25px;
+
+  top: 0;
+  z-index: 1;
+}
+
+.username {
+  text-transform: capitalize;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.bio {
+  color: #868686;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.profile-posts {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.profile-posts-carousel {
+  display: flex;
+  transition: 0.3s ease-in-out;
+
+  .view {
+    min-width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+.profile-nav {
+  padding-left: 7%;
+  color: white;
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.nav-button {
+  display: block;
+  width: 70px;
+  position: relative;
+  border-radius: 500px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-slide {
+  width: 70px;
+  height: 20px;
+  background: #2d2d2d;
+  position: absolute;
+  z-index: 0;
+  border-radius: 500px;
+  transition: 0.2s ease-in-out;
+}
