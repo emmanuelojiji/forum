@@ -6,8 +6,6 @@
   overflow: scroll;
   background: #131313;
 
-
-
   @media only screen and (max-width: 600px) {
     min-width: 100%;
   }
@@ -21,6 +19,6 @@
 
 .content{
   //padding-top: calc(env(safe-area-inset-top) + 20px + 100px);
-    padding-top: calc(env(safe-area-inset-top));  
+
   
 }
