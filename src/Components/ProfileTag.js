@@ -1,4 +1,6 @@
 import "./ProfileTag.scss";
+import { useMemo } from "react";
+
 const ProfileTag = ({ text }) => {
   const colors = [
     {
@@ -15,15 +17,17 @@ const ProfileTag = ({ text }) => {
     },
   ];
 
-  const randomColor = Math.floor(Math.random() * colors.length);
-  console.log();
+  const randomColor = useMemo(() => {
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  }, []);
 
   return (
     <div
       className="ProfileTag"
       style={{
-        borderColor: colors[randomColor].hex_code,
-        color: colors[randomColor].hex_code,
+        borderColor: randomColor.hex_code,
+        color: randomColor.hex_code,
       }}
     >
       {text}
