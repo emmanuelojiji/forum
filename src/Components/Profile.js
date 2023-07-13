@@ -57,7 +57,11 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
           feugiat ultricies efficitur👨‍💻
         </p>
-        <ProfileTag />
+        <div className="profile-tag-container">
+          <ProfileTag />
+          <ProfileTag />
+          <ProfileTag />
+        </div>
         {/*userVerified && <h1>VERIFIED</h1>*/}
       </div>
 
@@ -80,7 +84,8 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
         <div
           className="profile-posts-carousel"
           style={{
-            transform: view === "posts" ? "translateX(0%)" : "translateX(-100%)",
+            transform:
+              view === "posts" ? "translateX(0%)" : "translateX(-100%)",
           }}
         >
           <div className="view-1 view">
