@@ -8,7 +8,8 @@ footer {
   left: 0;
   padding-left: 7%;
   padding-right: 7%;
-  padding-bottom: env(safe-area-inset-top);
+  padding-top:30px ;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 30px);
   color: white;
   text-decoration: none;
   display: flex;

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <Link to="/">Home</Link>
-      <Link to="/profile">Profile</Link>
+      <Link to="/profile">Link</Link>
       <Link to="/profile">
         <Avatar size="30px"></Avatar>
       </Link>

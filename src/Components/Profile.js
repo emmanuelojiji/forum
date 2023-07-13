@@ -59,25 +59,27 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
         </p>
         <div className="profile-tag-container">
           <ProfileTag text="Product Designer" />
-          <ProfileTag text="London"/>
-          <ProfileTag text="Gym"/>
+          <ProfileTag text="London" />
+          <ProfileTag text="Gym" />
         </div>
         {/*userVerified && <h1>VERIFIED</h1>*/}
       </div>
-
-      <div className="profile-nav">
-        <div
-          className="nav-slide"
-          style={{
-            transform: view === "posts" ? "translateX(0%)" : "translateX(100%)",
-          }}
-        ></div>
-        <span className="nav-button" onClick={() => setView("posts")}>
-          Posts
-        </span>
-        <span className="nav-button" onClick={() => setView("likes")}>
-          Likes
-        </span>
+      <div className="profile-nav-wrapper">
+        <div className="profile-nav">
+          <div
+            className="nav-slide"
+            style={{
+              transform:
+                view === "posts" ? "translateX(0%)" : "translateX(100%)",
+            }}
+          ></div>
+          <span className="nav-button" onClick={() => setView("posts")}>
+            Posts
+          </span>
+          <span className="nav-button" onClick={() => setView("likes")}>
+            Likes
+          </span>
+        </div>
       </div>
 
       <div className="profile-posts">

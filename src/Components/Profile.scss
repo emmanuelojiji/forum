@@ -1,5 +1,7 @@
 .Profile {
   padding-bottom: calc(70px + 50px);
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .profile-header {
@@ -13,7 +15,7 @@
   z-index: 1;
 }
 
-.profile-tag-container{
+.profile-tag-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -48,12 +50,22 @@
   }
 }
 
+.profile-nav-wrapper {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  background: #0b0b0b;
+}
+
 .profile-nav {
   padding-left: 7%;
   color: white;
   display: flex;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  //margin-top: 25px;
+  //margin-bottom: 25px;
 }
 
 .nav-button {
