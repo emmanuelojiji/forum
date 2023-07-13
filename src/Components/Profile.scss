@@ -50,36 +50,32 @@
   }
 }
 
-.profile-nav-wrapper {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  background: #0b0b0b;
-}
-
 .profile-nav {
-  padding-left: 7%;
+   padding-left: 7%;
   color: white;
   display: flex;
-  //margin-top: 25px;
-  //margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  align-items: center;
+  background: #131313;
 }
+
 
 .nav-button {
   display: block;
-  width: 70px;
+  width: 80px;
   position: relative;
   border-radius: 500px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
 .nav-slide {
-  width: 70px;
-  height: 20px;
+  width: 80px;
+  height: 30px;
   background: #2d2d2d;
   position: absolute;
   z-index: 0;

@@ -64,8 +64,8 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
         </div>
         {/*userVerified && <h1>VERIFIED</h1>*/}
       </div>
-      <div className="profile-nav-wrapper">
-        <div className="profile-nav">
+      <div className="profile-nav">
+        
           <div
             className="nav-slide"
             style={{
@@ -79,7 +79,7 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
           <span className="nav-button" onClick={() => setView("likes")}>
             Likes
           </span>
-        </div>
+     
       </div>
 
       <div className="profile-posts">
