@@ -1,5 +1,6 @@
 import "./Feed.scss";
 import Card from "./Card";
+import Header from "./Header";
 
 const Feed = () => {
   return (

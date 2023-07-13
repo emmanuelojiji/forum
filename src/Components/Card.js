@@ -1,10 +1,11 @@
+import Avatar from "./Avatar";
 import "./Card.scss";
 
 const Card = () => {
   return (
     <div className="Card">
       <div className="username-avatar-wrap">
-        <div className="avatar"></div>
+        <Avatar size="30px"/>
         <h5>Emmanuel</h5>
       </div>
       <p>

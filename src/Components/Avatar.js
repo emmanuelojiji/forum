@@ -1,7 +1,5 @@
 import "./Avatar.scss";
-const Avatar = () => {
-  let size;
-
+const Avatar = ({ size }) => {
   return <div className="Avatar" style={{ width: size, height: size }}></div>;
 };
 
