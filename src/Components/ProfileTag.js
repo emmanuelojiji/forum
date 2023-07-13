@@ -1,5 +1,5 @@
 import "./ProfileTag.scss";
-const ProfileTag = () => {
+const ProfileTag = ({ text }) => {
   const colors = [
     {
       name: "green",
@@ -26,7 +26,7 @@ const ProfileTag = () => {
         color: colors[randomColor].hex_code,
       }}
     >
-      Product Designer
+      {text}
     </div>
   );
 };

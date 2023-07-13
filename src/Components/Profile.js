@@ -58,9 +58,9 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
           feugiat ultricies efficitur👨‍💻
         </p>
         <div className="profile-tag-container">
-          <ProfileTag />
-          <ProfileTag />
-          <ProfileTag />
+          <ProfileTag text="Product Designer" />
+          <ProfileTag text="London"/>
+          <ProfileTag text="Gym"/>
         </div>
         {/*userVerified && <h1>VERIFIED</h1>*/}
       </div>
