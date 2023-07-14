@@ -3,7 +3,7 @@ import Card from "./Components/Card";
 import Feed from "./Components/Feed";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./Components/Footer";
 import Authentication from "./Components/Authentication";
 import { IonApp } from "@ionic/react";
@@ -12,6 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./Components/Profile";
+import NewPost from "./Components/NewPost";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,16 +22,20 @@ function App() {
   const [userSignedIn, setUserSignedIn] = useState();
   const auth = getAuth();
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      setUserSignedIn(true);
-      setLoading(false);
-      // ...
-    } else {
-      setLoading(false);
-    }
-  });
+  const [createPostVisible, setCreatePostVisible] = useState(false);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setUserSignedIn(true);
+        setLoading(false);
+        // ...
+      } else {
+        setLoading(false);
+      }
+    });
+  }, []);
 
   return (
     <BrowserRouter>
@@ -44,7 +49,6 @@ function App() {
           <div className="App-Sidebar-wrap">
             <Sidebar menuOpen={menuOpen} />
             <div className="App">
-             
               <div className="content">
                 <Routes>
                   <Route
@@ -56,10 +60,26 @@ function App() {
                       />
                     }
                   />
-                  <Route exact path="/" element={<Feed />} />
+                  <Route
+                    exact
+                    path="/"
+                    element={
+                      <Feed
+                        createPostVisible={createPostVisible}
+                        setCreatePostVisible={setCreatePostVisible}
+                      />
+                    }
+                  />
                 </Routes>
               </div>
-              <Footer />
+              <NewPost
+                createPostVisible={createPostVisible}
+                setCreatePostVisible={setCreatePostVisible}
+              />
+              <Footer
+                createPostVisible={createPostVisible}
+                setCreatePostVisible={setCreatePostVisible}
+              />
             </div>
           </div>
         )}

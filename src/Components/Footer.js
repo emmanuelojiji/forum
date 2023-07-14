@@ -1,13 +1,20 @@
 import "./Footer.scss";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "./Avatar";
 
-const Footer = () => {
+const Footer = ({ createPostVisible, setCreatePostVisible }) => {
   return (
     <footer>
       <Link to="/">Home</Link>
-      <Link to="/profile">Link</Link>
+      <p
+        onClick={() =>
+          createPostVisible
+            ? setCreatePostVisible(false)
+            : setCreatePostVisible(true)
+        }
+      >
+        New post
+      </p>
       <Link to="/profile">
         <Avatar size="30px"></Avatar>
       </Link>
