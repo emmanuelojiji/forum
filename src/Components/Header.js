@@ -6,16 +6,8 @@ const Header = ({menuOpen, setMenuOpen}) => {
 
   return (
     <header>
-      <div className="menu-logo-wrap">
-        <p
-          className="mobile-menu"
-          onClick={() => (menuOpen ? setMenuOpen(false) : setMenuOpen(true))}
-        >
-          Mobile
-        </p>
+     <h2>Work Party</h2>
    
-      </div>
-      <div className="avatar"></div>
     </header>
   );
 };

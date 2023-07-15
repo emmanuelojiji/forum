@@ -65,21 +65,26 @@ const Profile = ({ userSignedIn, setUserSignedIn }) => {
         {/*userVerified && <h1>VERIFIED</h1>*/}
       </div>
       <div className="profile-nav">
-        
-          <div
-            className="nav-slide"
-            style={{
-              transform:
-                view === "posts" ? "translateX(0%)" : "translateX(100%)",
-            }}
-          ></div>
-          <span className="nav-button" onClick={() => setView("posts")}>
-            Posts
-          </span>
-          <span className="nav-button" onClick={() => setView("likes")}>
-            Likes
-          </span>
-     
+        <div
+          className="nav-slide"
+          style={{
+            transform: view === "posts" ? "translateX(0%)" : "translateX(100%)",
+          }}
+        ></div>
+        <span
+          className="nav-button"
+          onClick={() => setView("posts")}
+          style={{ color: view === "posts" && "#37BBA3" }}
+        >
+          Posts
+        </span>
+        <span
+          className="nav-button"
+          onClick={() => setView("likes")}
+          style={{ color: view === "likes" && "#37BBA3" }}
+        >
+          Likes
+        </span>
       </div>
 
       <div className="profile-posts">

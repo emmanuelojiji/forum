@@ -58,6 +58,7 @@
   padding-bottom: 25px;
   align-items: center;
   background: #131313;
+  position: relative;
 }
 
 
@@ -71,6 +72,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-slide {

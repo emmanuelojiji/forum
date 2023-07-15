@@ -1,7 +1,6 @@
 header {
-  background: #131313;
-  margin-bottom: 50px;
-  padding: 20px 5%;
+  background: rgba(0,0,0,0.8);
+  padding: 20px 7%;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -9,6 +8,7 @@ header {
   top: 0;
   left: 0;
   padding-top: calc(env(safe-area-inset-top) + 20px);
+  color: white;
 }
 
 h1{

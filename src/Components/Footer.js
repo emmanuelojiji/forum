@@ -12,8 +12,9 @@ const Footer = ({ createPostVisible, setCreatePostVisible }) => {
             ? setCreatePostVisible(false)
             : setCreatePostVisible(true)
         }
+        className="add"
       >
-        New post
+        New Post
       </p>
       <Link to="/profile">
         <Avatar size="30px"></Avatar>
